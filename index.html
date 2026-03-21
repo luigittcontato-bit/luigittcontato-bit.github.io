@@ -6,18 +6,18 @@
   <title>Luigi Andrade | Portfólio</title>
   <meta
     name="description"
-    content="Portfólio de Luigi Andrade com projetos em tecnologia, IA, finanças e produtividade."
+    content="Portfólio de Luigi Andrade com projetos em tecnologia, aplicações web, dashboards, produtividade e soluções digitais."
   />
   <style>
     :root {
       --bg: #07111f;
       --bg-secondary: #0d1b2d;
       --card: rgba(15, 25, 40, 0.72);
-      --card-strong: rgba(18, 30, 48, 0.92);
       --text: #f8fbff;
       --muted: #a9b9cc;
       --line: rgba(255, 255, 255, 0.08);
       --primary: #39d0ff;
+      --primary-dark: #19b7e6;
       --primary-2: #22c55e;
       --accent: #7c3aed;
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
@@ -51,11 +51,6 @@
     a {
       text-decoration: none;
       color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     .container {
@@ -131,7 +126,7 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, var(--primary), #1aa6d1);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #04111c;
       font-size: 20px;
       box-shadow: 0 12px 30px rgba(57, 208, 255, 0.28);
@@ -185,7 +180,8 @@
     .info-card,
     .project-card,
     .about-card,
-    .contact-card {
+    .contact-card,
+    .tech-card {
       background: var(--card);
       border: 1px solid var(--line);
       backdrop-filter: blur(14px);
@@ -271,7 +267,7 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #19b7e6);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #07111f;
       box-shadow: 0 14px 34px rgba(57, 208, 255, 0.25);
     }
@@ -428,6 +424,28 @@
       font-size: 0.95rem;
     }
 
+    .tech-card {
+      border-radius: 28px;
+      padding: 30px;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .tech-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+      font-weight: 700;
+      color: #d8e6f5;
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -562,6 +580,13 @@
       max-width: 520px;
     }
 
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
     .contact-boxes {
       display: grid;
       gap: 14px;
@@ -629,11 +654,16 @@
         grid-template-columns: 1fr;
       }
 
+      .tech-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .hero-card,
       .info-card,
       .project-card,
       .about-card,
-      .contact-card {
+      .contact-card,
+      .tech-card {
         border-radius: 24px;
       }
     }
@@ -655,20 +685,20 @@
       .info-card,
       .project-card,
       .about-card,
-      .contact-card {
+      .contact-card,
+      .tech-card {
         padding: 24px;
       }
 
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
+      .hero-stats,
+      .tech-grid,
       .skills-grid {
         grid-template-columns: 1fr;
       }
 
       .project-actions,
-      .hero-buttons {
+      .hero-buttons,
+      .contact-actions {
         flex-direction: column;
       }
 
@@ -700,6 +730,7 @@
 
         <nav class="nav-links">
           <a href="#sobre">Sobre</a>
+          <a href="#tecnologias">Tecnologias</a>
           <a href="#projetos">Projetos</a>
           <a href="#contato">Contato</a>
         </nav>
@@ -713,14 +744,14 @@
             <div class="eyebrow">✨ Projetos reais com tecnologia, IA e produto digital</div>
 
             <h1>
-              Construindo experiências digitais com visual
+              Construindo aplicações web com visual
               <span class="gradient">moderno, funcional e profissional</span>
             </h1>
 
             <p>
-              Sou Luigi Andrade e estou desenvolvendo projetos com foco em aplicações web,
-              dashboards, produtividade e soluções práticas. Este portfólio reúne meus trabalhos
-              publicados e mostra minha evolução na criação de produtos digitais.
+              Sou Luigi Andrade. Desenvolvo projetos digitais com foco em aplicações web,
+              dashboards, produtividade e soluções práticas. Este portfólio reúne trabalhos
+              publicados que mostram minha evolução em design, usabilidade e construção de produto.
             </p>
 
             <div class="hero-buttons">
@@ -734,12 +765,12 @@
                 <span>Projetos publicados</span>
               </div>
               <div class="stat">
-                <strong>100%</strong>
-                <span>Foco em evolução prática</span>
-              </div>
-              <div class="stat">
                 <strong>Web</strong>
                 <span>Apps modernos e responsivos</span>
+              </div>
+              <div class="stat">
+                <strong>UI</strong>
+                <span>Foco em produto e experiência</span>
               </div>
             </div>
           </div>
@@ -756,7 +787,7 @@
                   <div class="mini-icon">⚡</div>
                   <div>
                     <strong>Frontend moderno</strong>
-                    <span>Layouts responsivos com visual profissional</span>
+                    <span>Layouts responsivos com visual limpo e profissional</span>
                   </div>
                 </div>
 
@@ -764,7 +795,7 @@
                   <div class="mini-icon">🔐</div>
                   <div>
                     <strong>Autenticação</strong>
-                    <span>Fluxos com login e dados por usuário</span>
+                    <span>Fluxos com login e dados organizados por usuário</span>
                   </div>
                 </div>
 
@@ -772,7 +803,7 @@
                   <div class="mini-icon">📊</div>
                   <div>
                     <strong>Dashboards</strong>
-                    <span>Indicadores visuais, estatísticas e progresso</span>
+                    <span>Indicadores visuais, progresso e estatísticas</span>
                   </div>
                 </div>
               </div>
@@ -781,8 +812,8 @@
             <div class="info-card reveal">
               <h3>Objetivo</h3>
               <p>
-                Construir um portfólio cada vez mais forte com projetos que pareçam produtos reais
-                e mostrem evolução em design, estrutura e funcionalidade.
+                Construir projetos que pareçam produtos reais, com boa apresentação,
+                utilidade prática e uma experiência visual que transmita profissionalismo.
               </p>
 
               <div class="mini-list">
@@ -790,15 +821,15 @@
                   <div class="mini-icon">🚀</div>
                   <div>
                     <strong>Produto real</strong>
-                    <span>Projetos com cara de startup e aplicação pronta</span>
+                    <span>Apps com cara de startup e solução pronta</span>
                   </div>
                 </div>
 
                 <div class="mini-item">
                   <div class="mini-icon">🧠</div>
                   <div>
-                    <strong>Aprendizado contínuo</strong>
-                    <span>Tecnologia, IA e criação de apps digitais</span>
+                    <strong>Evolução constante</strong>
+                    <span>Tecnologia, IA e criação de aplicações digitais</span>
                   </div>
                 </div>
               </div>
@@ -821,16 +852,17 @@
           <div class="about-card reveal">
             <div class="about-text">
               <p>
-                Sou iniciante na área de tecnologia e estou desenvolvendo projetos para crescer no digital,
-                aprender mais sobre criação de aplicações e construir um portfólio cada vez mais profissional.
+                Estou desenvolvendo projetos digitais com foco em aplicações web, dashboards,
+                produtividade e experiências modernas. Meu objetivo é construir soluções bem apresentadas,
+                úteis e com visual profissional.
               </p>
               <p>
-                Meu foco está em criar apps com aparência moderna, boa usabilidade e funcionalidades úteis,
-                unindo design limpo, estrutura clara e experiência de produto real.
+                Gosto de criar interfaces limpas, organizar fluxos de usuário de forma clara
+                e transformar ideias em produtos digitais que transmitam qualidade visual e boa usabilidade.
               </p>
               <p>
-                Busco evoluir em desenvolvimento de interfaces, lógica de aplicações, dashboards,
-                autenticação e construção de soluções digitais que possam ser mostradas com orgulho.
+                Meu portfólio está sendo construído com foco em evolução prática, mostrando projetos
+                publicados, estrutura de produto e atenção à experiência final de quem usa.
               </p>
             </div>
 
@@ -856,6 +888,30 @@
         </div>
       </section>
 
+      <section class="section" id="tecnologias">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <h2>Tecnologias e ferramentas</h2>
+              <p>
+                Ferramentas e plataformas que fazem parte da construção dos meus projetos.
+              </p>
+            </div>
+          </div>
+
+          <div class="tech-card reveal">
+            <div class="tech-grid">
+              <div class="tech-item">Lovable</div>
+              <div class="tech-item">GitHub</div>
+              <div class="tech-item">GitHub Pages</div>
+              <div class="tech-item">HTML</div>
+              <div class="tech-item">CSS</div>
+              <div class="tech-item">IA / No-code</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="projetos">
         <div class="container">
           <div class="section-head reveal">
@@ -876,8 +932,8 @@
 
               <h3>Andrades Finança</h3>
               <p>
-                Aplicativo de finanças pessoais criado com Lovable, focado em simplicidade,
-                organização e controle financeiro no dia a dia.
+                Sistema de finanças pessoais criado com Lovable, focado em organização,
+                acompanhamento e controle financeiro diário com uma experiência simples e funcional.
               </p>
 
               <div class="tag-list">
@@ -890,11 +946,11 @@
               <div class="feature-list">
                 <div class="feature-item">
                   <span class="feature-dot"></span>
-                  <span>Interface pensada para organização financeira</span>
+                  <span>Organização financeira com foco em clareza visual</span>
                 </div>
                 <div class="feature-item">
                   <span class="feature-dot"></span>
-                  <span>Experiência visual simples, clara e prática</span>
+                  <span>Estrutura pensada para controle diário e praticidade</span>
                 </div>
                 <div class="feature-item">
                   <span class="feature-dot"></span>
@@ -916,10 +972,9 @@
 
               <h3>HabitFlow</h3>
               <p>
-                Aplicativo de controle de hábitos desenvolvido para ajudar usuários a construir
-                rotinas melhores através do acompanhamento diário de hábitos. O sistema inclui
-                autenticação de usuários, dashboard interativo, progresso visual, estatísticas
-                semanais e sistema de conquistas.
+                Aplicação de acompanhamento de hábitos com autenticação, dashboard interativo,
+                progresso visual, estatísticas semanais e sistema de conquistas para auxiliar
+                usuários a criarem rotinas mais consistentes.
               </p>
 
               <div class="tag-list">
@@ -933,15 +988,15 @@
               <div class="feature-list">
                 <div class="feature-item">
                   <span class="feature-dot"></span>
-                  <span>Autenticação e dados por usuário</span>
+                  <span>Autenticação e dados organizados por usuário</span>
                 </div>
                 <div class="feature-item">
                   <span class="feature-dot"></span>
-                  <span>Dashboard com progresso e estatísticas</span>
+                  <span>Dashboard com métricas, progresso e estatísticas</span>
                 </div>
                 <div class="feature-item">
                   <span class="feature-dot"></span>
-                  <span>Sistema de hábitos, conquistas e visual moderno</span>
+                  <span>Fluxo completo de hábitos com visual moderno e funcional</span>
                 </div>
               </div>
 
@@ -969,10 +1024,14 @@
             <div class="contact-info">
               <h3 style="font-size: 1.6rem; margin-bottom: 12px;">Vamos conectar</h3>
               <p>
-                Este portfólio representa minha evolução na criação de produtos digitais. Estou
-                construindo projetos cada vez mais fortes e organizados para consolidar minha presença na área tech.
+                Este portfólio representa minha evolução na criação de produtos digitais.
+                Estou construindo projetos cada vez mais fortes, organizados e com aparência profissional.
               </p>
-              <a class="btn btn-primary" href="https://github.com/luigittcontato-bit" target="_blank">Acessar GitHub</a>
+
+              <div class="contact-actions">
+                <a class="btn btn-primary" href="https://github.com/luigittcontato-bit" target="_blank">Acessar GitHub</a>
+                <a class="btn btn-secondary" href="mailto:seuemail@email.com">Enviar email</a>
+              </div>
             </div>
 
             <div class="contact-boxes">
@@ -988,7 +1047,7 @@
                 <div class="contact-icon">✉️</div>
                 <div>
                   <strong>Email</strong>
-                  <span>luigittcontato@gmail.com</span>
+                  <span>seuemail@email.com</span>
                 </div>
               </div>
 
