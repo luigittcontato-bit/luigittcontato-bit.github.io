@@ -6,26 +6,33 @@
   <title>Luigi Andrade | Portfólio</title>
   <meta
     name="description"
-    content="Portfólio de Luigi Andrade — criação de aplicações web modernas, dashboards, produtos digitais e experiências visuais profissionais."
+    content="Portfólio de Luigi Andrade — criação de aplicações web modernas, interfaces premium, dashboards e produtos digitais."
   />
-  <meta name="theme-color" content="#080b14" />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     :root {
-      --bg: #060816;
-      --bg-soft: rgba(255, 255, 255, 0.04);
-      --card: rgba(255, 255, 255, 0.06);
-      --card-strong: rgba(255, 255, 255, 0.09);
-      --stroke: rgba(255, 255, 255, 0.09);
-      --text: #f5f7ff;
-      --muted: #a8b1c7;
-      --muted-2: #7f8aa3;
-      --primary: #3b82f6;
-      --primary-2: #60a5fa;
-      --accent: #22d3ee;
-      --success: #34d399;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
+      --bg: #050816;
+      --bg-2: #0a1020;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.04);
+      --stroke: rgba(255,255,255,0.08);
+      --stroke-2: rgba(255,255,255,0.05);
+      --text: #f4f7ff;
+      --muted: #a7b4cf;
+      --muted-2: #7b88a3;
+      --blue: #3b82f6;
+      --cyan: #22d3ee;
+      --green: #34d399;
+      --shadow: 0 24px 60px rgba(0,0,0,0.35);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
       --radius-md: 18px;
       --radius-sm: 14px;
       --max: 1180px;
@@ -42,25 +49,20 @@
     }
 
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.22), transparent 22%),
-        radial-gradient(circle at 85% 10%, rgba(34, 211, 238, 0.14), transparent 24%),
-        radial-gradient(circle at 50% 100%, rgba(96, 165, 250, 0.12), transparent 26%),
-        linear-gradient(180deg, #050816 0%, #070b18 45%, #04070f 100%);
+      font-family: "Inter", sans-serif;
       color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(59,130,246,0.22), transparent 24%),
+        radial-gradient(circle at 90% 8%, rgba(34,211,238,0.12), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(59,130,246,0.08), transparent 30%),
+        linear-gradient(180deg, #040713 0%, #07101f 45%, #03060d 100%);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
+      text-decoration: none;
     }
 
     .container {
@@ -68,46 +70,46 @@
       margin: 0 auto;
     }
 
-    .blur-orb {
+    .bg-orb {
       position: fixed;
-      inset: auto;
-      width: 360px;
-      height: 360px;
+      width: 320px;
+      height: 320px;
       border-radius: 999px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 65%);
-      filter: blur(30px);
+      filter: blur(34px);
       pointer-events: none;
       z-index: 0;
+      opacity: .7;
     }
 
     .orb-1 {
-      top: -80px;
+      top: -100px;
       left: -100px;
+      background: radial-gradient(circle, rgba(59,130,246,.22), transparent 65%);
     }
 
     .orb-2 {
+      top: 30%;
       right: -120px;
-      top: 32%;
-      background: radial-gradient(circle, rgba(34, 211, 238, 0.14), transparent 65%);
+      background: radial-gradient(circle, rgba(34,211,238,.16), transparent 65%);
     }
 
     .orb-3 {
       bottom: -120px;
-      left: 18%;
-      background: radial-gradient(circle, rgba(96, 165, 250, 0.14), transparent 65%);
+      left: 20%;
+      background: radial-gradient(circle, rgba(59,130,246,.15), transparent 65%);
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
       backdrop-filter: blur(18px);
-      background: rgba(5, 8, 20, 0.68);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(5, 8, 20, 0.7);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -118,23 +120,21 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      min-width: 0;
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
+    .brand-badge {
+      width: 44px;
+      height: 44px;
       border-radius: 14px;
-      background:
-        linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(34, 211, 238, 0.15)),
-        rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
       display: grid;
       place-items: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
       font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.04em;
+      font-size: 1rem;
+      background:
+        linear-gradient(135deg, rgba(59,130,246,.25), rgba(34,211,238,.18)),
+        rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .brand-text {
@@ -144,19 +144,19 @@
     }
 
     .brand-text strong {
-      font-size: 0.98rem;
-      letter-spacing: 0.02em;
+      font-size: .98rem;
+      letter-spacing: .02em;
     }
 
     .brand-text span {
+      font-size: .8rem;
       color: var(--muted);
-      font-size: 0.8rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
@@ -165,32 +165,33 @@
       font-weight: 500;
       padding: 10px 14px;
       border-radius: 999px;
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .nav-links a:hover {
       color: var(--text);
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,.05);
     }
 
-    .nav-cta {
+    .nav-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff;
       font-weight: 700;
-      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.28);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(37,99,235,.25);
+      transition: .25s ease;
     }
 
-    .nav-cta:hover,
+    .nav-btn:hover,
     .btn-primary:hover,
-    .project-link.primary:hover {
+    .project-btn.primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 42px rgba(37, 99, 235, 0.34);
+      box-shadow: 0 18px 36px rgba(37,99,235,.3);
     }
 
     main {
@@ -203,14 +204,14 @@
     }
 
     .hero {
-      padding-top: 80px;
-      padding-bottom: 70px;
+      padding-top: 76px;
+      padding-bottom: 72px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
       align-items: center;
     }
 
@@ -220,10 +221,10 @@
       gap: 10px;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #d9e4ff;
-      font-size: 0.92rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #dbe8ff;
+      font-size: .92rem;
       margin-bottom: 22px;
     }
 
@@ -232,29 +233,29 @@
       width: 9px;
       height: 9px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), var(--primary));
-      box-shadow: 0 0 0 5px rgba(59,130,246,0.13);
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 0 6px rgba(59,130,246,.12);
     }
 
     h1 {
-      font-size: clamp(2.6rem, 6vw, 5.3rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      margin-bottom: 22px;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      margin-bottom: 20px;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #ffffff 0%, #b9d4ff 38%, #67e8f9 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #bbd5ff 38%, #67e8f9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero p {
-      font-size: 1.08rem;
       color: var(--muted);
-      max-width: 720px;
-      margin-bottom: 30px;
+      font-size: 1.08rem;
+      max-width: 700px;
+      margin-bottom: 28px;
     }
 
     .hero-actions {
@@ -266,149 +267,146 @@
 
     .btn-primary,
     .btn-secondary {
+      min-height: 52px;
+      padding: 0 20px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 20px;
       border-radius: 16px;
       font-weight: 700;
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .btn-primary {
       color: white;
       background: linear-gradient(135deg, #2563eb, #22d3ee);
-      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.26);
+      box-shadow: 0 14px 34px rgba(37,99,235,.25);
     }
 
     .btn-secondary {
       color: var(--text);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
+    .btn-secondary:hover,
+    .project-btn.secondary:hover {
+      background: rgba(255,255,255,.08);
       transform: translateY(-2px);
     }
 
     .hero-stats {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 14px;
-      margin-top: 10px;
     }
 
-    .stat {
+    .stat-card {
       padding: 18px;
       border-radius: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
     }
 
-    .stat strong {
+    .stat-card strong {
       display: block;
       font-size: 1.45rem;
       line-height: 1;
       margin-bottom: 8px;
     }
 
-    .stat span {
+    .stat-card span {
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: .92rem;
     }
 
-    .hero-card {
+    .hero-panel {
       position: relative;
       padding: 26px;
       border-radius: var(--radius-xl);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.09);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.08);
       box-shadow: var(--shadow);
       overflow: hidden;
-      min-height: 520px;
     }
 
-    .hero-card::before {
+    .hero-panel::before {
       content: "";
       position: absolute;
       inset: -1px;
       border-radius: inherit;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(59,130,246,0.55), rgba(34,211,238,0.18), rgba(255,255,255,0.06));
+      background: linear-gradient(135deg, rgba(59,130,246,.45), rgba(34,211,238,.16), rgba(255,255,255,.04));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite: xor;
-              mask-composite: exclude;
+      mask-composite: exclude;
       pointer-events: none;
     }
 
-    .mini-label {
+    .mini-tag {
       display: inline-flex;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(59,130,246,0.12);
-      border: 1px solid rgba(96,165,250,0.25);
-      color: #d8e8ff;
-      font-weight: 600;
-      font-size: 0.86rem;
-      margin-bottom: 18px;
+      background: rgba(59,130,246,.12);
+      border: 1px solid rgba(96,165,250,.22);
+      color: #d7e6ff;
+      font-size: .84rem;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
 
-    .hero-card h2 {
+    .hero-panel h2 {
       font-size: 1.5rem;
-      line-height: 1.15;
+      line-height: 1.1;
       margin-bottom: 10px;
     }
 
-    .hero-card p {
+    .hero-panel p {
       color: var(--muted);
-      font-size: 0.97rem;
-      margin-bottom: 24px;
+      font-size: .96rem;
+      margin-bottom: 22px;
     }
 
-    .dashboard-preview {
+    .panel-boxes {
       display: grid;
       gap: 14px;
     }
 
-    .preview-top {
+    .panel-top {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.1fr .9fr;
       gap: 14px;
     }
 
-    .preview-box,
-    .preview-chart,
-    .preview-list {
-      background: rgba(7, 12, 26, 0.8);
-      border: 1px solid rgba(255,255,255,0.07);
+    .panel-box,
+    .panel-chart,
+    .panel-list {
+      background: rgba(7,12,26,.82);
+      border: 1px solid rgba(255,255,255,.06);
       border-radius: 20px;
       padding: 18px;
     }
 
-    .preview-box strong,
-    .preview-chart strong,
-    .preview-list strong {
+    .panel-box strong,
+    .panel-chart strong,
+    .panel-list strong {
       display: block;
-      font-size: 0.92rem;
-      color: #dbe7ff;
-      margin-bottom: 14px;
+      font-size: .92rem;
+      color: #dde8ff;
+      margin-bottom: 12px;
     }
 
     .big-number {
-      font-size: 2.1rem;
+      font-size: 2rem;
       font-weight: 800;
       line-height: 1;
       margin-bottom: 8px;
     }
 
-    .muted-small {
+    .small-muted {
       color: var(--muted-2);
-      font-size: 0.9rem;
+      font-size: .9rem;
     }
 
     .bars {
@@ -416,47 +414,47 @@
       gap: 10px;
     }
 
-    .bar-line {
+    .bar {
       height: 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,.06);
       overflow: hidden;
     }
 
-    .bar-line span {
+    .bar span {
       display: block;
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
     }
 
-    .preview-list ul {
+    .panel-list ul {
       list-style: none;
       display: grid;
       gap: 10px;
     }
 
-    .preview-list li {
+    .panel-list li {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      color: #d9e5ff;
+      border-bottom: 1px solid rgba(255,255,255,.06);
       padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: #dce6ff;
     }
 
-    .preview-list li:last-child {
+    .panel-list li:last-child {
       border-bottom: none;
       padding-bottom: 0;
     }
 
-    .dot {
+    .bullet {
       width: 10px;
       height: 10px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      box-shadow: 0 0 0 5px rgba(59,130,246,0.12);
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 0 5px rgba(59,130,246,.12);
       flex-shrink: 0;
     }
 
@@ -471,8 +469,8 @@
     .section-kicker {
       color: #8ec5ff;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.76rem;
+      letter-spacing: .16em;
+      font-size: .75rem;
       font-weight: 800;
       margin-bottom: 10px;
     }
@@ -480,24 +478,23 @@
     .section-title {
       font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.05;
-      letter-spacing: -0.04em;
+      letter-spacing: -.04em;
       margin-bottom: 12px;
     }
 
     .section-desc {
+      max-width: 760px;
       color: var(--muted);
-      max-width: 720px;
     }
 
-    .about-grid {
+    .grid-2 {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.06fr .94fr;
       gap: 22px;
-      align-items: stretch;
     }
 
     .panel {
-      background: var(--card);
+      background: var(--panel);
       border: 1px solid var(--stroke);
       border-radius: var(--radius-xl);
       padding: 28px;
@@ -511,17 +508,16 @@
     .feature-list {
       display: grid;
       gap: 14px;
-      margin-top: 22px;
     }
 
     .feature-item {
       display: flex;
-      gap: 14px;
       align-items: flex-start;
-      padding: 14px;
+      gap: 14px;
+      padding: 15px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
     }
 
     .feature-icon {
@@ -530,43 +526,66 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-      font-size: 1rem;
-      background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(34,211,238,0.16));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(59,130,246,.18), rgba(34,211,238,.14));
+      border: 1px solid rgba(255,255,255,.08);
       flex-shrink: 0;
+      font-size: 1rem;
     }
 
     .feature-item h3 {
       font-size: 1rem;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .feature-item p {
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: .93rem;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .proof-card {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: var(--shadow);
+    }
+
+    .proof-card strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .proof-card p {
+      color: var(--muted);
+      font-size: .95rem;
     }
 
     .skills-wrap {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 8px;
     }
 
     .skill-chip {
       padding: 12px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #e6eeff;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #e5edff;
       font-weight: 600;
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .skill-chip:hover {
       transform: translateY(-2px);
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(96,165,250,0.28);
+      background: rgba(255,255,255,.08);
     }
 
     .projects-grid {
@@ -577,12 +596,11 @@
     .project-card {
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 30px;
-      box-shadow: var(--shadow);
       padding: 30px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
     }
 
     .project-card::after {
@@ -593,7 +611,7 @@
       width: 220px;
       height: 220px;
       border-radius: 999px;
-      background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 65%);
+      background: radial-gradient(circle, rgba(59,130,246,.15), transparent 65%);
       pointer-events: none;
     }
 
@@ -605,17 +623,21 @@
       margin-bottom: 18px;
     }
 
+    .project-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
     .project-number {
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
       border-radius: 18px;
       display: grid;
       place-items: center;
       font-weight: 800;
-      font-size: 1rem;
-      color: #fff;
-      background: linear-gradient(135deg, rgba(59,130,246,0.7), rgba(34,211,238,0.7));
-      box-shadow: 0 14px 34px rgba(59,130,246,0.18);
+      background: linear-gradient(135deg, rgba(59,130,246,.82), rgba(34,211,238,.72));
+      box-shadow: 0 14px 34px rgba(59,130,246,.18);
       flex-shrink: 0;
     }
 
@@ -623,24 +645,24 @@
       display: inline-flex;
       padding: 9px 12px;
       border-radius: 999px;
-      background: rgba(52, 211, 153, 0.08);
-      border: 1px solid rgba(52, 211, 153, 0.24);
-      color: #c8ffe8;
+      background: rgba(52,211,153,.08);
+      border: 1px solid rgba(52,211,153,.22);
+      color: #caffea;
+      font-size: .8rem;
       font-weight: 700;
-      font-size: 0.8rem;
     }
 
     .project-title {
-      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
       line-height: 1.05;
-      letter-spacing: -0.04em;
+      letter-spacing: -.04em;
       margin-bottom: 10px;
     }
 
     .project-desc {
       color: var(--muted);
       margin-bottom: 18px;
-      max-width: 840px;
+      max-width: 860px;
     }
 
     .tags {
@@ -653,16 +675,16 @@
     .tag {
       padding: 10px 13px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #e6ecff;
-      font-size: 0.9rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #e5ecff;
+      font-size: .9rem;
       font-weight: 600;
     }
 
     .project-points {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 14px;
       margin-bottom: 26px;
     }
@@ -670,19 +692,19 @@
     .point {
       padding: 18px;
       border-radius: 18px;
-      background: rgba(6, 11, 25, 0.7);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(7,12,24,.74);
+      border: 1px solid rgba(255,255,255,.06);
     }
 
     .point strong {
       display: block;
       margin-bottom: 8px;
-      font-size: 0.98rem;
+      font-size: .98rem;
     }
 
     .point span {
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: .93rem;
     }
 
     .project-actions {
@@ -691,7 +713,7 @@
       gap: 12px;
     }
 
-    .project-link {
+    .project-btn {
       min-height: 48px;
       padding: 0 18px;
       border-radius: 14px;
@@ -699,37 +721,32 @@
       align-items: center;
       gap: 10px;
       font-weight: 700;
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
-    .project-link.primary {
+    .project-btn.primary {
+      color: white;
       background: linear-gradient(135deg, #2563eb, #22d3ee);
-      color: #fff;
-      box-shadow: 0 14px 34px rgba(37,99,235,0.24);
+      box-shadow: 0 14px 34px rgba(37,99,235,.24);
     }
 
-    .project-link.secondary {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+    .project-btn.secondary {
       color: var(--text);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
     }
 
-    .project-link.secondary:hover {
-      background: rgba(255,255,255,0.08);
-      transform: translateY(-2px);
-    }
-
-    .contact-wrap {
+    .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
+      grid-template-columns: 1fr .95fr;
       gap: 22px;
     }
 
     .contact-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 30px;
       padding: 30px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.08);
       box-shadow: var(--shadow);
     }
 
@@ -746,7 +763,6 @@
     .contact-list {
       display: grid;
       gap: 14px;
-      margin-top: 18px;
     }
 
     .contact-item {
@@ -755,26 +771,25 @@
       gap: 14px;
       padding: 16px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
     }
 
-    .contact-item-icon {
+    .contact-icon {
       width: 44px;
       height: 44px;
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(34,211,238,0.16));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(59,130,246,.18), rgba(34,211,238,.14));
+      border: 1px solid rgba(255,255,255,.08);
       flex-shrink: 0;
-      font-size: 1rem;
     }
 
     .contact-item span {
-      color: var(--muted);
       display: block;
-      font-size: 0.88rem;
+      color: var(--muted);
+      font-size: .88rem;
     }
 
     .contact-item strong {
@@ -782,29 +797,27 @@
       color: var(--text);
     }
 
-    .footer-card {
+    footer {
+      padding: 26px 0 48px;
+      color: var(--muted-2);
+    }
+
+    .footer-box {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: var(--muted);
-    }
-
-    footer {
-      padding: 24px 0 50px;
-      color: var(--muted-2);
     }
 
     .reveal {
       opacity: 0;
       transform: translateY(24px);
-      transition: 0.8s ease;
+      transition: .8s ease;
     }
 
     .reveal.visible {
@@ -814,13 +827,9 @@
 
     @media (max-width: 1080px) {
       .hero-grid,
-      .about-grid,
-      .contact-wrap {
+      .grid-2,
+      .contact-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        min-height: auto;
       }
     }
 
@@ -836,18 +845,15 @@
         align-items: flex-start;
       }
 
-      .nav-links {
-        width: 100%;
-      }
-
       .hero-stats,
+      .proof-grid,
       .project-points,
-      .preview-top {
+      .panel-top {
         grid-template-columns: 1fr;
       }
 
-      .project-top,
-      .section-head {
+      .section-head,
+      .project-top {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -858,16 +864,17 @@
         width: min(var(--max), calc(100% - 20px));
       }
 
+      .hero-panel,
       .panel,
       .project-card,
       .contact-card,
-      .hero-card {
+      .proof-card {
         padding: 22px;
         border-radius: 24px;
       }
 
       h1 {
-        letter-spacing: -0.06em;
+        letter-spacing: -.06em;
       }
 
       .hero-actions,
@@ -877,21 +884,21 @@
 
       .btn-primary,
       .btn-secondary,
-      .project-link {
+      .project-btn {
         width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="blur-orb orb-1"></div>
-  <div class="blur-orb orb-2"></div>
-  <div class="blur-orb orb-3"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
 
   <header>
     <div class="container nav">
       <a href="#inicio" class="brand" aria-label="Ir para o topo">
-        <div class="brand-mark">LA</div>
+        <div class="brand-badge">LA</div>
         <div class="brand-text">
           <strong>Luigi Andrade</strong>
           <span>Portfólio • Web Apps • Produto Digital</span>
@@ -900,13 +907,19 @@
 
       <nav class="nav-links">
         <a href="#sobre">Sobre</a>
+        <a href="#diferenciais">Diferenciais</a>
         <a href="#stack">Stack</a>
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
       </nav>
 
-      <a class="nav-cta" href="https://github.com/luigittcontato-bit" target="_blank" rel="noreferrer">
-        Ver GitHub
+      <a
+        class="nav-btn"
+        href="https://github.com/luigittcontato-bit"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
       </a>
     </div>
   </header>
@@ -915,72 +928,89 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal">
-          <div class="eyebrow">Projetos digitais com visual forte, produto e usabilidade</div>
+          <div class="eyebrow">Interfaces modernas, projetos reais e visual profissional</div>
 
           <h1>
-            Eu crio <span class="gradient-text">aplicações web modernas</span>
-            com cara de produto real.
+            Eu crio <span class="gradient-text">produtos digitais com cara premium</span>
+            e experiência moderna.
           </h1>
 
           <p>
-            Sou Luigi Andrade e construo projetos digitais com foco em interface profissional,
-            dashboards, organização de dados, produtividade e experiências visuais que passam
-            confiança. Meu objetivo é transformar boas ideias em produtos claros, funcionais e memoráveis.
+            Sou Luigi Andrade e desenvolvo aplicações web com foco em interface forte,
+            organização visual, experiência do usuário e apresentação profissional.
+            Meu objetivo é transformar ideias em projetos digitais que pareçam produtos reais.
           </p>
 
           <div class="hero-actions">
-            <a href="#projetos" class="btn-primary">Ver projetos em destaque</a>
-            <a href="#contato" class="btn-secondary">Entrar em contato</a>
+            <a href="#projetos" class="btn-primary">Ver projetos</a>
+            <a href="#contato" class="btn-secondary">Falar comigo</a>
           </div>
 
           <div class="hero-stats">
-            <div class="stat">
-              <strong>02+</strong>
-              <span>Projetos publicados e apresentados com foco em produto</span>
+            <div class="stat-card">
+              <strong>03</strong>
+              <span>Projetos publicados e ativos</span>
             </div>
-            <div class="stat">
+
+            <div class="stat-card">
               <strong>UI + UX</strong>
-              <span>Experiências visuais modernas, responsivas e funcionais</span>
+              <span>Design limpo, forte e responsivo</span>
             </div>
-            <div class="stat">
+
+            <div class="stat-card">
               <strong>Web Apps</strong>
-              <span>Dashboards, autenticação, fluxos e organização de dados</span>
+              <span>Apps com visual moderno e usabilidade real</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-card reveal">
-          <div class="mini-label">Visão de produto digital</div>
-          <h2>Portfólio pensado para impressionar cliente e recrutador</h2>
+        <div class="hero-panel reveal">
+          <div class="mini-tag">Visão profissional de portfólio</div>
+          <h2>Um portfólio que transmite valor, produto e confiança</h2>
           <p>
-            Apresentação premium, estrutura clara, projetos bem posicionados
-            e destaque para experiência, tecnologia e valor percebido.
+            Estrutura refinada para mostrar sua evolução, destacar projetos publicados
+            e causar uma impressão muito mais forte em clientes e recrutadores.
           </p>
 
-          <div class="dashboard-preview">
-            <div class="preview-top">
-              <div class="preview-box">
+          <div class="panel-boxes">
+            <div class="panel-top">
+              <div class="panel-box">
                 <strong>Posicionamento</strong>
-                <div class="big-number">Profissional</div>
-                <div class="muted-small">Visual limpo, premium e atual</div>
+                <div class="big-number">Premium</div>
+                <div class="small-muted">Mais forte, moderno e profissional</div>
               </div>
 
-              <div class="preview-chart">
-                <strong>Qualidade visual</strong>
+              <div class="panel-chart">
+                <strong>Percepção visual</strong>
                 <div class="bars">
-                  <div class="bar-line"><span style="width: 92%"></span></div>
-                  <div class="bar-line"><span style="width: 84%"></span></div>
-                  <div class="bar-line"><span style="width: 88%"></span></div>
+                  <div class="bar"><span style="width: 94%;"></span></div>
+                  <div class="bar"><span style="width: 87%;"></span></div>
+                  <div class="bar"><span style="width: 90%;"></span></div>
                 </div>
               </div>
             </div>
 
-            <div class="preview-list">
-              <strong>Destaques que seu portfólio transmite</strong>
+            <div class="panel-list">
+              <strong>O que este portfólio comunica</strong>
               <ul>
-                <li><span style="display:flex;align-items:center;gap:10px;"><span class="dot"></span>Visual moderno e forte</span><span>UI</span></li>
-                <li><span style="display:flex;align-items:center;gap:10px;"><span class="dot"></span>Projetos com utilidade real</span><span>Produto</span></li>
-                <li><span style="display:flex;align-items:center;gap:10px;"><span class="dot"></span>Boa apresentação de valor</span><span>Impacto</span></li>
+                <li>
+                  <span style="display:flex;align-items:center;gap:10px;">
+                    <span class="bullet"></span>Visual moderno e memorável
+                  </span>
+                  <span>UI</span>
+                </li>
+                <li>
+                  <span style="display:flex;align-items:center;gap:10px;">
+                    <span class="bullet"></span>Projetos com utilidade real
+                  </span>
+                  <span>Produto</span>
+                </li>
+                <li>
+                  <span style="display:flex;align-items:center;gap:10px;">
+                    <span class="bullet"></span>Apresentação profissional
+                  </span>
+                  <span>Impacto</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -993,29 +1023,29 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">Sobre mim</div>
-            <h2 class="section-title">Construindo produtos digitais com visual, clareza e utilidade</h2>
+            <h2 class="section-title">Construindo produtos digitais com visual, clareza e presença</h2>
             <p class="section-desc">
-              Meu foco está em criar interfaces que pareçam produtos reais, com boa organização,
-              navegação fluida e uma estética que valorize a experiência do usuário.
+              Meu foco está em criar aplicações web modernas com uma interface forte,
+              experiência organizada e apresentação profissional.
             </p>
           </div>
         </div>
 
-        <div class="about-grid">
+        <div class="grid-2">
           <div class="panel reveal">
             <p>
-              Desenvolvo projetos digitais com foco em aplicações web, dashboards, produtividade
-              e soluções práticas. Gosto de unir estética moderna com clareza funcional, para que
-              cada tela pareça profissional e fácil de usar.
+              Desenvolvo projetos digitais com foco em aplicações web, dashboards, produtividade,
+              controle de dados e soluções que transmitam valor real. Gosto de unir estética moderna
+              com estrutura clara para que cada projeto pareça um produto pronto.
             </p>
             <p>
-              Estou evoluindo na construção de produtos digitais que não sejam apenas bonitos, mas
-              que transmitam valor real. Meu objetivo é apresentar projetos cada vez mais fortes,
-              bem estruturados e com aparência premium.
+              Meu objetivo é evoluir cada vez mais na criação de experiências digitais com aparência
+              premium, boa usabilidade e posicionamento profissional, tanto para clientes quanto para
+              oportunidades futuras.
             </p>
             <p>
-              Meu portfólio representa esse caminho: interfaces modernas, organização visual,
-              experiência do usuário e aplicações com potencial de uso real.
+              Este portfólio foi pensado para apresentar meus projetos de forma mais forte, organizada
+              e impactante, sem perder a clareza.
             </p>
           </div>
 
@@ -1025,7 +1055,7 @@
                 <div class="feature-icon">🎯</div>
                 <div>
                   <h3>Foco em produto</h3>
-                  <p>Projetos com cara de startup, solução pronta e apresentação estratégica.</p>
+                  <p>Projetos com cara de solução real, pensados para uso e apresentação.</p>
                 </div>
               </div>
 
@@ -1033,26 +1063,64 @@
                 <div class="feature-icon">⚡</div>
                 <div>
                   <h3>Execução moderna</h3>
-                  <p>Layout responsivo, interface limpa e experiência visual mais profissional.</p>
+                  <p>Layout atual, experiência responsiva e visual mais refinado.</p>
                 </div>
               </div>
 
               <div class="feature-item">
                 <div class="feature-icon">📊</div>
                 <div>
-                  <h3>Dashboards e organização</h3>
-                  <p>Estruturas com métricas, controle de dados e fluxo claro para o usuário.</p>
+                  <h3>Organização visual</h3>
+                  <p>Dashboards, blocos bem distribuídos e navegação clara.</p>
                 </div>
               </div>
 
               <div class="feature-item">
-                <div class="feature-icon">🤖</div>
+                <div class="feature-icon">🚀</div>
                 <div>
-                  <h3>IA e construção rápida</h3>
-                  <p>Uso de ferramentas modernas para acelerar criação de apps com boa apresentação.</p>
+                  <h3>Apresentação profissional</h3>
+                  <p>Portfólio estruturado para causar melhor impressão e gerar mais confiança.</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Diferenciais</div>
+            <h2 class="section-title">O que faz meu trabalho subir de nível</h2>
+            <p class="section-desc">
+              Não é só sobre fazer telas bonitas. É sobre criar algo visualmente forte,
+              fácil de entender e com cara de produto de verdade.
+            </p>
+          </div>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-card reveal">
+            <strong>Visual que vende melhor</strong>
+            <p>
+              Interfaces mais limpas, modernas e profissionais aumentam o valor percebido do projeto.
+            </p>
+          </div>
+
+          <div class="proof-card reveal">
+            <strong>Projetos publicados</strong>
+            <p>
+              Ter aplicações reais no ar fortalece seu posicionamento e transmite muito mais confiança.
+            </p>
+          </div>
+
+          <div class="proof-card reveal">
+            <strong>Foco em experiência</strong>
+            <p>
+              Cada projeto é pensado para parecer intuitivo, funcional e agradável de navegar.
+            </p>
           </div>
         </div>
       </div>
@@ -1062,11 +1130,11 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">Stack e ferramentas</div>
-            <h2 class="section-title">Tecnologias que fazem parte da minha construção</h2>
+            <div class="section-kicker">Stack</div>
+            <h2 class="section-title">Tecnologias e ferramentas da minha construção</h2>
             <p class="section-desc">
-              Ferramentas e plataformas usadas para desenvolver interfaces modernas,
-              publicar projetos e estruturar produtos digitais.
+              Ferramentas que fazem parte do meu processo para criar aplicações web modernas
+              e produtos digitais com boa apresentação.
             </p>
           </div>
         </div>
@@ -1074,17 +1142,17 @@
         <div class="panel reveal">
           <div class="skills-wrap">
             <span class="skill-chip">Lovable</span>
-            <span class="skill-chip">GitHub</span>
-            <span class="skill-chip">GitHub Pages</span>
             <span class="skill-chip">HTML</span>
             <span class="skill-chip">CSS</span>
             <span class="skill-chip">JavaScript</span>
-            <span class="skill-chip">IA / No-code</span>
-            <span class="skill-chip">UX / UI</span>
-            <span class="skill-chip">Dashboards</span>
+            <span class="skill-chip">GitHub</span>
+            <span class="skill-chip">GitHub Pages</span>
+            <span class="skill-chip">Web Apps</span>
+            <span class="skill-chip">Dashboard</span>
+            <span class="skill-chip">UX/UI</span>
             <span class="skill-chip">Produto Digital</span>
             <span class="skill-chip">Responsividade</span>
-            <span class="skill-chip">Web Apps</span>
+            <span class="skill-chip">IA / No-code</span>
           </div>
         </div>
       </div>
@@ -1095,10 +1163,10 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">Projetos</div>
-            <h2 class="section-title">Projetos em destaque</h2>
+            <h2 class="section-title">Projetos publicados em destaque</h2>
             <p class="section-desc">
-              Aplicações desenvolvidas com foco em utilidade prática, apresentação forte
-              e estrutura visual alinhada com produto digital moderno.
+              Aplicações desenvolvidas com foco em utilidade, visual forte e experiência
+              moderna para demonstrar construção real de produto digital.
             </p>
           </div>
         </div>
@@ -1106,122 +1174,174 @@
         <div class="projects-grid">
           <article class="project-card reveal">
             <div class="project-top">
-              <div style="display:flex;gap:16px;align-items:center;">
+              <div class="project-left">
                 <div class="project-number">01</div>
-                <div>
-                  <div class="project-badge">Projeto publicado</div>
-                </div>
+                <div class="project-badge">Projeto publicado</div>
               </div>
             </div>
 
             <h3 class="project-title">💰 Andrades Finança</h3>
             <p class="project-desc">
-              Sistema de finanças pessoais criado com foco em organização, acompanhamento e controle
-              financeiro diário. O projeto valoriza clareza visual, praticidade e experiência simples
-              para facilitar o uso no dia a dia.
+              Sistema de finanças pessoais pensado para organização, acompanhamento e controle
+              financeiro com uma experiência clara, moderna e prática para o dia a dia.
             </p>
 
             <div class="tags">
-              <span class="tag">Lovable</span>
               <span class="tag">Finanças</span>
               <span class="tag">Web App</span>
               <span class="tag">UX</span>
-              <span class="tag">Produto Digital</span>
+              <span class="tag">Dashboard</span>
+              <span class="tag">Lovable</span>
             </div>
 
             <div class="project-points">
               <div class="point">
                 <strong>Clareza visual</strong>
-                <span>Estrutura pensada para organizar informações de forma direta e elegante.</span>
+                <span>Informações organizadas de forma simples e elegante.</span>
               </div>
               <div class="point">
                 <strong>Uso prático</strong>
-                <span>Controle financeiro diário com foco em simplicidade e funcionalidade.</span>
+                <span>Projeto pensado para controle financeiro real.</span>
               </div>
               <div class="point">
                 <strong>Valor de portfólio</strong>
-                <span>Projeto ideal para demonstrar construção de produto digital real.</span>
+                <span>Ajuda a demonstrar construção de produto digital útil.</span>
               </div>
             </div>
 
             <div class="project-actions">
               <a
-                class="project-link primary"
+                class="project-btn primary"
                 href="https://andradesfinanca.lovable.app/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Ver projeto online
+                Ver projeto
               </a>
 
               <a
-                class="project-link secondary"
+                class="project-btn secondary"
                 href="https://github.com/luigittcontato-bit"
                 target="_blank"
                 rel="noreferrer"
               >
-                Ver no GitHub
+                Ver GitHub
               </a>
             </div>
           </article>
 
           <article class="project-card reveal">
             <div class="project-top">
-              <div style="display:flex;gap:16px;align-items:center;">
+              <div class="project-left">
                 <div class="project-number">02</div>
-                <div>
-                  <div class="project-badge">Projeto publicado</div>
-                </div>
+                <div class="project-badge">Projeto publicado</div>
               </div>
             </div>
 
             <h3 class="project-title">✅ HabitFlow</h3>
             <p class="project-desc">
-              Aplicação para acompanhamento de hábitos com autenticação, dashboard interativo,
-              progresso visual, estatísticas semanais e sistema de conquistas. O foco é ajudar
-              usuários a criarem rotinas mais consistentes com uma experiência moderna e organizada.
+              Aplicação para acompanhamento de hábitos com dashboard interativo, progresso visual,
+              autenticação e métricas que ajudam o usuário a manter consistência na rotina.
             </p>
 
             <div class="tags">
-              <span class="tag">Lovable</span>
               <span class="tag">Hábitos</span>
               <span class="tag">Dashboard</span>
               <span class="tag">Auth</span>
               <span class="tag">Web App</span>
+              <span class="tag">Lovable</span>
             </div>
 
             <div class="project-points">
               <div class="point">
-                <strong>Autenticação</strong>
-                <span>Fluxo com dados organizados por usuário e experiência mais completa.</span>
-              </div>
-              <div class="point">
                 <strong>Métricas visuais</strong>
-                <span>Dashboard com progresso, estatísticas e acompanhamento de rotina.</span>
+                <span>Progresso, estatísticas e visão clara da rotina.</span>
               </div>
               <div class="point">
-                <strong>Produto moderno</strong>
-                <span>App com visual funcional, atual e forte para apresentação profissional.</span>
+                <strong>Experiência moderna</strong>
+                <span>Interface organizada, atual e agradável de usar.</span>
+              </div>
+              <div class="point">
+                <strong>Mais maturidade</strong>
+                <span>Projeto mais completo para fortalecer seu portfólio.</span>
               </div>
             </div>
 
             <div class="project-actions">
               <a
-                class="project-link primary"
+                class="project-btn primary"
                 href="https://habit-flow-progress.lovable.app/dashboard"
                 target="_blank"
                 rel="noreferrer"
               >
-                Ver projeto online
+                Ver projeto
               </a>
 
               <a
-                class="project-link secondary"
+                class="project-btn secondary"
                 href="https://github.com/luigittcontato-bit"
                 target="_blank"
                 rel="noreferrer"
               >
-                Ver no GitHub
+                Ver GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <div class="project-left">
+                <div class="project-number">03</div>
+                <div class="project-badge">Novo projeto publicado</div>
+              </div>
+            </div>
+
+            <h3 class="project-title">🏍️ Elite Detalhes</h3>
+            <p class="project-desc">
+              Landing page/app para uma marca de estética para motos, com visual premium,
+              identidade forte, foco em agendamento, apresentação de resultados e geração de confiança.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Landing Page</span>
+              <span class="tag">Estética Automotiva</span>
+              <span class="tag">UI Premium</span>
+              <span class="tag">Conversão</span>
+              <span class="tag">Lovable</span>
+            </div>
+
+            <div class="project-points">
+              <div class="point">
+                <strong>Visual impactante</strong>
+                <span>Design escuro, premium e mais marcante para o cliente.</span>
+              </div>
+              <div class="point">
+                <strong>Foco em resultado</strong>
+                <span>Estrutura pensada para vender melhor o serviço.</span>
+              </div>
+              <div class="point">
+                <strong>Projeto estratégico</strong>
+                <span>Mostra capacidade de criar páginas com objetivo comercial.</span>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a
+                class="project-btn primary"
+                href="https://larrydetalhes.lovable.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver projeto
+              </a>
+
+              <a
+                class="project-btn secondary"
+                href="https://github.com/luigittcontato-bit"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver GitHub
               </a>
             </div>
           </article>
@@ -1236,25 +1356,22 @@
             <div class="section-kicker">Contato</div>
             <h2 class="section-title">Vamos construir algo forte juntos</h2>
             <p class="section-desc">
-              Estou desenvolvendo projetos cada vez mais sólidos em interface, experiência
-              e produto digital. Estes são meus principais canais para contato e portfólio.
+              Estou desenvolvendo projetos cada vez mais profissionais em interface,
+              experiência e produto digital. Estes são meus canais principais.
             </p>
           </div>
         </div>
 
-        <div class="contact-wrap">
+        <div class="contact-grid">
           <div class="contact-card reveal">
-            <h3>Disponível para novos projetos e conexões</h3>
+            <h3>Disponível para novos projetos e oportunidades</h3>
             <p>
-              Se você busca alguém focado em criar aplicações com visual moderno,
-              organização e apresentação profissional, vamos conversar.
+              Se você procura alguém focado em criar aplicações com visual moderno,
+              clareza e apresentação profissional, vamos conversar.
             </p>
 
             <div class="hero-actions">
-              <a
-                href="mailto:luigittcontato@gmail.com"
-                class="btn-primary"
-              >
+              <a href="mailto:luigittcontato@gmail.com" class="btn-primary">
                 Enviar e-mail
               </a>
 
@@ -1271,8 +1388,13 @@
 
           <div class="contact-card reveal">
             <div class="contact-list">
-              <a class="contact-item" href="https://github.com/luigittcontato-bit" target="_blank" rel="noreferrer">
-                <div class="contact-item-icon">💻</div>
+              <a
+                class="contact-item"
+                href="https://github.com/luigittcontato-bit"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div class="contact-icon">💻</div>
                 <div>
                   <span>GitHub</span>
                   <strong>github.com/luigittcontato-bit</strong>
@@ -1280,7 +1402,7 @@
               </a>
 
               <a class="contact-item" href="mailto:luigittcontato@gmail.com">
-                <div class="contact-item-icon">✉️</div>
+                <div class="contact-icon">✉️</div>
                 <div>
                   <span>E-mail</span>
                   <strong>luigittcontato@gmail.com</strong>
@@ -1288,16 +1410,12 @@
               </a>
 
               <div class="contact-item">
-                <div class="contact-item-icon">🚀</div>
+                <div class="contact-icon">🚀</div>
                 <div>
-                  <span>Projetos publicados</span>
-                  <strong>Andrades Finança • HabitFlow</strong>
+                  <span>Projetos ativos</span>
+                  <strong>Andrades Finança • HabitFlow • Elite Detalhes</strong>
                 </div>
               </div>
-            </div>
-
-            <div class="footer-card">
-              <span>Portfólio construído para transmitir valor, profissionalismo e evolução.</span>
             </div>
           </div>
         </div>
@@ -1307,7 +1425,10 @@
 
   <footer>
     <div class="container">
-      © 2026 Luigi Andrade. Todos os direitos reservados.
+      <div class="footer-box">
+        <span>© 2026 Luigi Andrade. Todos os direitos reservados.</span>
+        <span>Portfólio com foco em produto, visual premium e apresentação profissional.</span>
+      </div>
     </div>
   </footer>
 
