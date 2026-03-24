@@ -17,21 +17,22 @@
 
   <style>
     :root {
-      --bg: #07080c;
-      --bg-soft: #0d1017;
+      --bg: #06070b;
+      --bg-2: #0b0f17;
       --card: rgba(255, 255, 255, 0.04);
       --card-strong: rgba(255, 255, 255, 0.06);
       --stroke: rgba(255, 255, 255, 0.08);
       --stroke-strong: rgba(255, 255, 255, 0.14);
       --text: #f5f7fb;
-      --muted: #a0a9b7;
-      --muted-2: #7e8898;
+      --muted: #a3acb8;
+      --muted-2: #7d8796;
       --accent: #8ab4ff;
       --accent-2: #6ee7f9;
+      --success: #25d366;
       --white: #ffffff;
       --shadow: 0 25px 60px rgba(0, 0, 0, 0.38);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
+      --radius-xl: 34px;
+      --radius-lg: 26px;
       --radius-md: 18px;
       --max: 1180px;
     }
@@ -49,22 +50,17 @@
     body {
       font-family: "Inter", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(138, 180, 255, 0.12), transparent 30%),
+        radial-gradient(circle at top left, rgba(138, 180, 255, 0.13), transparent 28%),
         radial-gradient(circle at top right, rgba(110, 231, 249, 0.08), transparent 22%),
-        linear-gradient(180deg, #06070b 0%, #0b0e15 45%, #07080c 100%);
+        linear-gradient(180deg, #05060a 0%, #0a0d14 45%, #06070b 100%);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
+      text-decoration: none;
     }
 
     .container {
@@ -133,8 +129,8 @@
     }
 
     .brand-badge {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 16px;
       display: grid;
       place-items: center;
@@ -176,35 +172,17 @@
       color: var(--white);
     }
 
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 16px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255, 255, 255, 0.04);
-      font-weight: 700;
-      transition: 0.25s ease;
-    }
-
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.08);
-    }
-
     .hero {
-      padding: 74px 0 50px;
+      padding: 78px 0 52px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 24px;
       align-items: stretch;
     }
 
-    .glass-card,
     .hero-card,
     .hero-side-card,
     .info-card,
@@ -220,7 +198,7 @@
     .hero-card {
       position: relative;
       overflow: hidden;
-      padding: 46px;
+      padding: 50px;
       border-radius: var(--radius-xl);
     }
 
@@ -229,10 +207,22 @@
       position: absolute;
       right: -120px;
       bottom: -120px;
-      width: 280px;
-      height: 280px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(138, 180, 255, 0.16), transparent 70%);
+      background: radial-gradient(circle, rgba(138, 180, 255, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      left: -100px;
+      top: -100px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(110, 231, 249, 0.08), transparent 70%);
       pointer-events: none;
     }
 
@@ -250,17 +240,17 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 1.03;
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      line-height: 1.02;
       letter-spacing: -0.07em;
       margin-bottom: 18px;
-      max-width: 840px;
+      max-width: 860px;
     }
 
     .hero p {
       font-size: 1.05rem;
       color: var(--muted);
-      max-width: 730px;
+      max-width: 740px;
       margin-bottom: 30px;
     }
 
@@ -285,7 +275,7 @@
 
     .btn-primary {
       background: linear-gradient(135deg, #ffffff, #dce7f8);
-      color: #0d1017;
+      color: #0c1017;
     }
 
     .btn-primary:hover {
@@ -302,6 +292,17 @@
     .btn-secondary:hover {
       transform: translateY(-2px);
       background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #1ebe5d);
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.22);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 35px rgba(37, 211, 102, 0.28);
     }
 
     .hero-metrics {
@@ -325,7 +326,7 @@
 
     .metric-card strong {
       display: block;
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       margin-bottom: 6px;
       color: var(--white);
     }
@@ -388,6 +389,16 @@
       font-weight: 600;
     }
 
+    .highlight-box {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(138,180,255,0.10), rgba(255,255,255,0.03));
+      border: 1px solid rgba(138, 180, 255, 0.14);
+      color: #dbe7f7;
+      font-size: 0.95rem;
+    }
+
     .grid-4,
     .grid-3,
     .projects-grid,
@@ -413,7 +424,7 @@
     }
 
     .info-card {
-      padding: 26px;
+      padding: 28px;
       border-radius: var(--radius-lg);
       transition: 0.28s ease;
     }
@@ -426,8 +437,8 @@
     }
 
     .info-icon {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       border-radius: 16px;
       display: grid;
       place-items: center;
@@ -450,8 +461,8 @@
     .project-card {
       position: relative;
       overflow: hidden;
-      padding: 30px;
-      border-radius: 28px;
+      padding: 32px;
+      border-radius: 30px;
       transition: 0.3s ease;
     }
 
@@ -461,7 +472,19 @@
       inset: 0 auto auto 0;
       width: 100%;
       height: 1px;
-      background: linear-gradient(90deg, rgba(138, 180, 255, 0.5), transparent);
+      background: linear-gradient(90deg, rgba(138, 180, 255, 0.55), transparent);
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+      pointer-events: none;
     }
 
     .project-number {
@@ -484,7 +507,7 @@
     }
 
     .project-card h3 {
-      font-size: 1.5rem;
+      font-size: 1.52rem;
       letter-spacing: -0.03em;
       margin-bottom: 12px;
     }
@@ -550,13 +573,13 @@
     }
 
     .contact-card {
-      padding: 28px;
+      padding: 30px;
       border-radius: 28px;
       transition: 0.28s ease;
     }
 
     .contact-card h3 {
-      font-size: 1.14rem;
+      font-size: 1.16rem;
       margin-bottom: 10px;
     }
 
@@ -572,6 +595,13 @@
       color: var(--white);
       font-weight: 700;
       word-break: break-word;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
     }
 
     .footer {
@@ -594,6 +624,28 @@
     .footer-mini {
       color: var(--muted-2);
       font-size: 0.9rem;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #25d366, #1ebe5d);
+      color: #fff;
+      font-size: 1.55rem;
+      box-shadow: 0 18px 35px rgba(37, 211, 102, 0.28);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: 0.25s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
     }
 
     .fade-up {
@@ -665,6 +717,13 @@
       .hero h1 {
         font-size: 2.45rem;
       }
+
+      .floating-whatsapp {
+        width: 58px;
+        height: 58px;
+        right: 16px;
+        bottom: 16px;
+      }
     }
   </style>
 </head>
@@ -693,19 +752,23 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-card fade-up">
-          <div class="hero-kicker">Interfaces modernas, projetos reais e visual profissional</div>
+          <div class="hero-kicker">Projetos reais • Interface premium • Presença profissional</div>
 
-          <h1>Eu crio produtos digitais com cara premium e experiência moderna.</h1>
+          <h1>Crio produtos digitais modernos com visual forte e apresentação de alto nível.</h1>
 
           <p>
-            Sou Luigi Andrade e desenvolvo aplicações web com foco em interface forte,
-            organização visual, clareza e apresentação profissional. Meu objetivo é criar
-            projetos que pareçam produtos reais, úteis e memoráveis.
+            Sou Luigi Andrade e desenvolvo aplicações web com foco em interface,
+            clareza visual, experiência moderna e percepção premium. Meu objetivo
+            é transformar ideias em produtos digitais que pareçam profissionais,
+            confiáveis e prontos para impressionar clientes.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projetos">Ver projetos</a>
-            <a class="btn btn-secondary" href="#contato">Falar comigo</a>
+            <a class="btn btn-secondary" href="#contato">Contato</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/5521983439717" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
           </div>
 
           <div class="hero-metrics">
@@ -714,44 +777,48 @@
               <span>Projetos publicados e ativos</span>
             </div>
             <div class="metric-card">
-              <strong>UI + UX</strong>
-              <span>Visual forte, limpo e responsivo</span>
+              <strong>Premium</strong>
+              <span>Visual forte, limpo e profissional</span>
             </div>
             <div class="metric-card">
               <strong>Produto</strong>
-              <span>Apps com utilidade real e boa apresentação</span>
+              <span>Apps úteis com apresentação real</span>
             </div>
           </div>
         </div>
 
         <div class="hero-side">
           <div class="hero-side-card fade-up delay-1">
-            <h3>Portfólio de alto nível</h3>
+            <h3>Posicionamento profissional</h3>
             <div class="bullet-list">
               <div class="bullet-item">
                 <span class="bullet-dot"></span>
-                <span>Um portfólio feito para transmitir valor, clareza e confiança.</span>
+                <span>Portfólio pensado para transmitir confiança e valor logo no primeiro acesso.</span>
               </div>
               <div class="bullet-item">
                 <span class="bullet-dot"></span>
-                <span>Estrutura refinada para destacar projetos publicados e reforçar posicionamento.</span>
+                <span>Projetos organizados para destacar qualidade visual, utilidade e execução.</span>
               </div>
               <div class="bullet-item">
                 <span class="bullet-dot"></span>
-                <span>Mais moderno, mais forte e mais profissional.</span>
+                <span>Design mais refinado para aumentar percepção de nível profissional.</span>
               </div>
+            </div>
+
+            <div class="highlight-box">
+              Meu foco é criar páginas, apps e experiências digitais que passem autoridade visual e pareçam produtos de verdade.
             </div>
           </div>
 
           <div class="hero-side-card fade-up delay-2">
-            <h3>O que este portfólio comunica</h3>
+            <h3>O que meu trabalho comunica</h3>
             <div class="pill-list">
-              <span class="pill">Visual moderno e memorável</span>
-              <span class="pill">UI</span>
-              <span class="pill">Projetos com utilidade real</span>
-              <span class="pill">Produto</span>
-              <span class="pill">Apresentação profissional</span>
-              <span class="pill">Impacto</span>
+              <span class="pill">UI moderna</span>
+              <span class="pill">Experiência clara</span>
+              <span class="pill">Projetos reais</span>
+              <span class="pill">Produto digital</span>
+              <span class="pill">Conversão</span>
+              <span class="pill">Apresentação premium</span>
             </div>
           </div>
         </div>
@@ -764,8 +831,8 @@
           <div class="eyebrow">Sobre mim</div>
           <h2>Construindo produtos digitais com visual, clareza e presença</h2>
           <p class="lead">
-            Meu foco está em criar aplicações web modernas com interface forte, experiência
-            organizada e apresentação profissional.
+            Meu foco está em criar aplicações web modernas com interface forte,
+            navegação organizada e apresentação profissional.
           </p>
         </div>
 
@@ -773,25 +840,25 @@
           <article class="info-card fade-up">
             <div class="info-icon">🚀</div>
             <h3>Foco em produto</h3>
-            <p>Projetos com cara de solução real, pensados para uso e apresentação.</p>
+            <p>Projetos com cara de solução real, pensados para uso, valor e apresentação.</p>
           </article>
 
           <article class="info-card fade-up delay-1">
             <div class="info-icon">⚡</div>
             <h3>Execução moderna</h3>
-            <p>Layout atual, experiência responsiva e visual mais refinado.</p>
+            <p>Layouts atuais, design limpo, responsividade e aparência premium.</p>
           </article>
 
           <article class="info-card fade-up delay-2">
             <div class="info-icon">📐</div>
             <h3>Organização visual</h3>
-            <p>Dashboards, blocos bem distribuídos e navegação clara.</p>
+            <p>Seções bem distribuídas, leitura clara e navegação mais agradável.</p>
           </article>
 
           <article class="info-card fade-up delay-3">
             <div class="info-icon">🧠</div>
             <h3>Apresentação profissional</h3>
-            <p>Estrutura pensada para causar melhor impressão e gerar mais confiança.</p>
+            <p>Estrutura criada para passar mais autoridade e causar melhor impressão.</p>
           </article>
         </div>
       </div>
@@ -803,8 +870,8 @@
           <div class="eyebrow">Diferenciais</div>
           <h2>O que faz meu trabalho subir de nível</h2>
           <p class="lead">
-            Não é só sobre fazer telas bonitas. É sobre criar algo visualmente forte, fácil
-            de entender e com cara de produto real.
+            Não é só sobre fazer algo bonito. É sobre criar um produto digital
+            forte, intuitivo e com presença profissional.
           </p>
         </div>
 
@@ -812,19 +879,19 @@
           <article class="info-card fade-up">
             <div class="info-icon">🎨</div>
             <h3>Visual que vende melhor</h3>
-            <p>Interfaces mais limpas, modernas e profissionais aumentam o valor percebido do projeto.</p>
+            <p>Interfaces mais limpas, modernas e fortes aumentam o valor percebido do projeto.</p>
           </article>
 
           <article class="info-card fade-up delay-1">
             <div class="info-icon">🌐</div>
             <h3>Projetos publicados</h3>
-            <p>Ter aplicações reais no ar fortalece seu posicionamento e transmite mais confiança.</p>
+            <p>Aplicações reais no ar fortalecem seu posicionamento e passam mais confiança.</p>
           </article>
 
           <article class="info-card fade-up delay-2">
             <div class="info-icon">✨</div>
             <h3>Foco em experiência</h3>
-            <p>Cada projeto é pensado para parecer intuitivo, funcional e agradável de navegar.</p>
+            <p>Cada projeto é pensado para ser intuitivo, funcional e agradável de navegar.</p>
           </article>
         </div>
       </div>
@@ -836,8 +903,8 @@
           <div class="eyebrow">Stack</div>
           <h2>Tecnologias e ferramentas da minha construção</h2>
           <p class="lead">
-            Ferramentas que fazem parte do meu processo para criar aplicações modernas e
-            produtos digitais com boa apresentação.
+            Ferramentas que fazem parte do meu processo para criar aplicações modernas
+            e produtos digitais com boa apresentação.
           </p>
         </div>
 
@@ -898,8 +965,8 @@
             <div class="project-label">Projeto publicado</div>
             <h3>💸 Andrades Finança</h3>
             <p>
-              Sistema de finanças pessoais pensado para organização, acompanhamento e controle
-              financeiro com uma experiência clara, moderna e prática para o dia a dia.
+              Sistema de finanças pessoais pensado para organização, acompanhamento
+              e controle financeiro com experiência clara, moderna e prática.
             </p>
 
             <div class="project-tags">
@@ -915,12 +982,7 @@
             <p><strong>Valor:</strong> Mostra capacidade de construir um produto útil e apresentável.</p>
 
             <div class="project-links">
-              <a
-                class="primary-link"
-                href="https://andradesfinanca.lovable.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="primary-link" href="https://andradesfinanca.lovable.app/" target="_blank" rel="noopener noreferrer">
                 Ver projeto
               </a>
             </div>
@@ -931,8 +993,8 @@
             <div class="project-label">Projeto publicado</div>
             <h3>✅ HabitFlow</h3>
             <p>
-              Aplicação para acompanhamento de hábitos com dashboard interativo, progresso visual,
-              autenticação e métricas que ajudam o usuário a manter consistência.
+              Aplicação para acompanhamento de hábitos com dashboard interativo,
+              progresso visual, autenticação e métricas de consistência.
             </p>
 
             <div class="project-tags">
@@ -948,12 +1010,7 @@
             <p><strong>Valor:</strong> Fortalece seu portfólio com um app mais completo e maduro.</p>
 
             <div class="project-links">
-              <a
-                class="primary-link"
-                href="https://habit-flow-progress.lovable.app/dashboard"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="primary-link" href="https://habit-flow-progress.lovable.app/dashboard" target="_blank" rel="noopener noreferrer">
                 Ver projeto
               </a>
             </div>
@@ -965,7 +1022,7 @@
             <h3>🏍️ Elite Detalhes</h3>
             <p>
               Landing page/app para uma marca de estética para motos, com visual premium,
-              identidade forte, foco em agendamento, apresentação de resultados e geração de confiança.
+              identidade forte, foco em agendamento, apresentação de resultados e confiança.
             </p>
 
             <div class="project-tags">
@@ -978,16 +1035,11 @@
             </div>
 
             <p><strong>Objetivo:</strong> Gerar mais autoridade visual e estimular agendamentos para o cliente.</p>
-            <p><strong>Destaque:</strong> Design mais marcante, escuro e premium, com apelo comercial forte.</p>
+            <p><strong>Destaque:</strong> Design marcante, escuro e premium, com apelo comercial forte.</p>
             <p><strong>Valor:</strong> Mostra capacidade de criar páginas focadas em apresentação e venda.</p>
 
             <div class="project-links">
-              <a
-                class="primary-link"
-                href="https://larrydetalhes.lovable.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="primary-link" href="https://larrydetalhes.lovable.app/" target="_blank" rel="noopener noreferrer">
                 Ver projeto
               </a>
             </div>
@@ -1016,12 +1068,7 @@
             <p><strong>Valor:</strong> Mostra capacidade de criar páginas comerciais fortes, com estética refinada e foco em resultado.</p>
 
             <div class="project-links">
-              <a
-                class="primary-link"
-                href="https://andrade-style.lovable.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="primary-link" href="https://andrade-style.lovable.app/" target="_blank" rel="noopener noreferrer">
                 Ver projeto
               </a>
             </div>
@@ -1036,36 +1083,44 @@
           <div class="eyebrow">Contato</div>
           <h2>Vamos construir algo forte juntos</h2>
           <p class="lead">
-            Estou desenvolvendo projetos cada vez mais profissionais em interface, experiência e
-            produto digital. Estes são meus canais principais.
+            Estou desenvolvendo projetos cada vez mais profissionais em interface,
+            experiência e produto digital. Estes são meus canais principais.
           </p>
         </div>
 
         <div class="contact-grid">
           <article class="contact-card fade-up">
-            <h3>📩 Disponível para novos projetos e oportunidades</h3>
+            <h3>📩 Contato direto</h3>
             <p>
-              Se você procura alguém focado em criar aplicações com visual moderno, clareza e
-              apresentação profissional, vamos conversar.
+              Se você procura alguém focado em criar aplicações com visual moderno,
+              clareza e apresentação profissional, vamos conversar.
             </p>
-            <a class="contact-link" href="mailto:luigittcontato@gmail.com">
-              luigittcontato@gmail.com
-            </a>
+
+            <div class="contact-actions">
+              <a class="btn btn-secondary" href="mailto:luigittcontato@gmail.com">
+                E-mail
+              </a>
+              <a class="btn btn-whatsapp" href="https://wa.me/5521983439717" target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
+            </div>
           </article>
 
           <article class="contact-card fade-up delay-1">
             <h3>🌐 Presença online</h3>
             <p>
-              Meu portfólio reúne projetos publicados com foco em produto, interface e apresentação profissional.
+              Meu portfólio reúne projetos publicados com foco em produto,
+              interface e apresentação profissional.
             </p>
-            <a
-              class="contact-link"
-              href="https://luigittcontato-bit.github.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver portfólio online
-            </a>
+
+            <div class="contact-actions">
+              <a class="btn btn-secondary" href="https://luigittcontato-bit.github.io/" target="_blank" rel="noopener noreferrer">
+                Ver portfólio
+              </a>
+              <a class="btn btn-secondary" href="https://github.com/luigittcontato-bit" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </div>
           </article>
         </div>
       </div>
@@ -1076,6 +1131,7 @@
     <div class="container">
       <div class="footer-card">
         <p><strong>E-mail:</strong> luigittcontato@gmail.com</p>
+        <p><strong>WhatsApp:</strong> (21) 98343-9717</p>
         <p><strong>Projetos ativos:</strong> Andrades Finança • HabitFlow • Elite Detalhes • Andrade Style</p>
         <p class="footer-mini">
           © 2026 Luigi Andrade. Todos os direitos reservados. Portfólio com foco em produto,
@@ -1084,5 +1140,16 @@
       </div>
     </div>
   </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/5521983439717"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+    title="Falar no WhatsApp"
+  >
+    ✆
+  </a>
 </body>
 </html>
