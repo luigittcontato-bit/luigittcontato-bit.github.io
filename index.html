@@ -1,1 +1,1373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luigi Andrade | Desenvolvedor Web</title>
+  <meta
+    name="description"
+    content="Portfólio profissional de Luigi Andrade com projetos reais, landing pages modernas, web apps, dashboards e interfaces premium."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
+  <style>
+    :root {
+      --bg: #05070b;
+      --bg-soft: #0b1018;
+      --bg-soft-2: #0e1420;
+      --card: rgba(255, 255, 255, 0.04);
+      --card-strong: rgba(255, 255, 255, 0.06);
+      --stroke: rgba(255, 255, 255, 0.08);
+      --stroke-strong: rgba(255, 255, 255, 0.16);
+      --text: #f5f7fb;
+      --muted: #a5afbd;
+      --muted-2: #7e8898;
+      --accent: #8ab4ff;
+      --accent-2: #6ee7f9;
+      --success: #25d366;
+      --warning: #f5c96a;
+      --white: #ffffff;
+      --shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+      --shadow-soft: 0 16px 35px rgba(0, 0, 0, 0.28);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(138, 180, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 100% 0%, rgba(110, 231, 249, 0.08), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(138, 180, 255, 0.06), transparent 25%),
+        linear-gradient(180deg, #05070b 0%, #090d14 45%, #05070b 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      backdrop-filter: blur(14px);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 18px rgba(138, 180, 255, 0.4);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.06;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+    }
+
+    .section .lead {
+      color: var(--muted);
+      font-size: 1.04rem;
+      max-width: 730px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(7, 8, 12, 0.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-badge {
+      width: 50px;
+      height: 50px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03)),
+        linear-gradient(135deg, #111827, #0f172a);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.05;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted-2);
+      font-size: 0.84rem;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 84px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .hero-side-card,
+    .stats-card,
+    .info-card,
+    .project-card,
+    .service-card,
+    .contact-card,
+    .footer-card,
+    .tech-card {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 52px;
+      border-radius: var(--radius-xl);
+      min-height: 100%;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -100px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(138, 180, 255, 0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      left: -90px;
+      bottom: -90px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(110, 231, 249, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      border: 1px solid var(--stroke);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.9rem, 6vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.08em;
+      margin-bottom: 18px;
+      max-width: 780px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(135deg, #ffffff, #a9c7ff 55%, #6ee7f9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.07rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffffff, #dce7f8);
+      color: #0c1017;
+      box-shadow: 0 12px 30px rgba(255,255,255,0.08);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 35px rgba(255,255,255,0.12);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--stroke);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #1ebe5d);
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.22);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 35px rgba(37, 211, 102, 0.28);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stats-card {
+      padding: 18px;
+      border-radius: 20px;
+      transition: 0.25s ease;
+      background: rgba(255,255,255,0.035);
+    }
+
+    .stats-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--stroke-strong);
+    }
+
+    .stats-card strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 6px;
+      color: var(--white);
+      letter-spacing: -0.04em;
+    }
+
+    .stats-card span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-side-card {
+      padding: 28px;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-side-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 14px;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .bullet-item {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .bullet-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 18px rgba(138, 180, 255, 0.4);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(138,180,255,0.10), rgba(255,255,255,0.03));
+      border: 1px solid rgba(138, 180, 255, 0.14);
+      color: #dbe7f7;
+      font-size: 0.95rem;
+    }
+
+    .grid-4,
+    .grid-3,
+    .projects-grid,
+    .services-grid,
+    .contact-grid,
+    .tech-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-card,
+    .service-card,
+    .tech-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      transition: 0.28s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .info-card:hover,
+    .service-card:hover,
+    .project-card:hover,
+    .contact-card:hover,
+    .tech-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--stroke-strong);
+    }
+
+    .info-icon,
+    .service-icon,
+    .tech-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--stroke);
+    }
+
+    .info-card h3,
+    .service-card h3,
+    .tech-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .info-card p,
+    .service-card p,
+    .tech-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+      border-radius: 30px;
+      transition: 0.3s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(138, 180, 255, 0.55), transparent);
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+      pointer-events: none;
+    }
+
+    .project-card.featured {
+      border-color: rgba(245, 201, 106, 0.26);
+      background:
+        linear-gradient(180deg, rgba(245, 201, 106, 0.05), rgba(255,255,255,0.03)),
+        rgba(255,255,255,0.04);
+    }
+
+    .project-card.featured::before {
+      background: linear-gradient(90deg, rgba(245, 201, 106, 0.85), transparent);
+      height: 2px;
+    }
+
+    .project-number {
+      font-size: 0.84rem;
+      color: var(--muted-2);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      margin-bottom: 8px;
+    }
+
+    .project-label {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .project-label.featured-label {
+      border-color: rgba(245, 201, 106, 0.25);
+      background: rgba(245, 201, 106, 0.08);
+      color: #f9dd97;
+    }
+
+    .project-card h3 {
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 0.97rem;
+    }
+
+    .project-card strong {
+      color: var(--white);
+    }
+
+    .project-status {
+      margin-top: 8px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(37, 211, 102, 0.08);
+      border: 1px solid rgba(37, 211, 102, 0.16);
+      color: #dff8e8;
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 18px;
+    }
+
+    .project-tags span {
+      display: inline-flex;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #dde7f7;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .primary-link {
+      background: linear-gradient(135deg, #ffffff, #dce7f8);
+      color: #0c1017;
+    }
+
+    .primary-link:hover,
+    .secondary-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .secondary-link {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--stroke);
+      color: var(--white);
+    }
+
+    .contact-card {
+      padding: 30px;
+      border-radius: 28px;
+      transition: 0.28s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .footer {
+      padding: 0 0 34px;
+    }
+
+    .footer-card {
+      padding: 24px;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .footer-mini {
+      color: var(--muted-2);
+      font-size: 0.9rem;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #25d366, #1ebe5d);
+      color: #fff;
+      box-shadow: 0 18px 35px rgba(37, 211, 102, 0.28);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: 0.25s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .floating-whatsapp svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+    .delay-4 { animation-delay: 0.32s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .grid-4,
+      .grid-3,
+      .projects-grid,
+      .services-grid,
+      .contact-grid,
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-card,
+      .hero-side-card,
+      .stats-card,
+      .info-card,
+      .project-card,
+      .service-card,
+      .contact-card,
+      .footer-card,
+      .tech-card {
+        padding: 22px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .container {
+        width: min(100% - 20px, var(--max));
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .floating-whatsapp {
+        width: 58px;
+        height: 58px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <div class="brand-badge">LA</div>
+        <div class="brand-text">
+          <strong>Luigi Andrade</strong>
+          <span>Portfólio • Web Apps • Landing Pages</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card fade-up">
+          <div class="hero-kicker">Projetos reais • Design premium • Presença profissional</div>
+
+          <h1>
+            Crio <span class="hero-highlight">sites e aplicações web modernas</span>
+            com visual forte, estratégia e cara de produto profissional.
+          </h1>
+
+          <p>
+            Sou Luigi Andrade, desenvolvedor focado em landing pages, dashboards e web apps
+            com aparência premium, navegação clara e presença comercial. Meu objetivo é
+            transformar ideias em projetos que transmitam valor, confiança e profissionalismo.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+            <a class="btn btn-secondary" href="#contato">Falar comigo</a>
+            <a
+              class="btn btn-whatsapp"
+              href="https://wa.me/5521983439717"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="stats-card">
+              <strong>07</strong>
+              <span>Projetos publicados e ativos</span>
+            </div>
+            <div class="stats-card">
+              <strong>Cliente real</strong>
+              <span>Projeto online sendo usado por cliente</span>
+            </div>
+            <div class="stats-card">
+              <strong>Visual premium</strong>
+              <span>Interfaces modernas com foco em conversão</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-side-card fade-up delay-1">
+            <h3>O que você encontra aqui</h3>
+            <div class="bullet-list">
+              <div class="bullet-item">
+                <span class="bullet-dot"></span>
+                <span>Projetos reais publicados para negócios, marcas e produtos digitais.</span>
+              </div>
+              <div class="bullet-item">
+                <span class="bullet-dot"></span>
+                <span>Sites e apps com foco em apresentação profissional, clareza e impacto visual.</span>
+              </div>
+              <div class="bullet-item">
+                <span class="bullet-dot"></span>
+                <span>Trabalhos com identidade forte, usabilidade e aparência de produto maduro.</span>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              Meu foco é criar experiências digitais que não pareçam amadoras. Tudo é pensado
+              para transmitir mais valor e causar uma ótima primeira impressão.
+            </div>
+          </div>
+
+          <div class="hero-side-card fade-up delay-2">
+            <h3>Especialidades</h3>
+            <div class="pill-list">
+              <span class="pill">Landing Pages</span>
+              <span class="pill">Web Apps</span>
+              <span class="pill">Dashboards</span>
+              <span class="pill">UI Premium</span>
+              <span class="pill">Responsivo</span>
+              <span class="pill">Conversão</span>
+              <span class="pill">Negócios locais</span>
+              <span class="pill">Produto Digital</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Sobre mim</div>
+          <h2>Construindo experiências digitais com mais valor visual e presença profissional</h2>
+          <p class="lead">
+            Sou desenvolvedor focado em criar páginas e aplicações web modernas, com forte
+            apelo visual, estrutura organizada e aparência confiável para marcas, negócios
+            locais e produtos digitais.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="info-card fade-up">
+            <div class="info-icon">🚀</div>
+            <h3>Projetos reais</h3>
+            <p>Aplicações publicadas com objetivo prático, presença forte e execução profissional.</p>
+          </article>
+
+          <article class="info-card fade-up delay-1">
+            <div class="info-icon">🎨</div>
+            <h3>Visual premium</h3>
+            <p>Design escuro, moderno e refinado para gerar percepção maior de valor.</p>
+          </article>
+
+          <article class="info-card fade-up delay-2">
+            <div class="info-icon">📐</div>
+            <h3>Estrutura organizada</h3>
+            <p>Hierarquia visual clara, leitura fluida e navegação bem distribuída.</p>
+          </article>
+
+          <article class="info-card fade-up delay-3">
+            <div class="info-icon">💼</div>
+            <h3>Postura profissional</h3>
+            <p>Portfólio pensado para impressionar cliente, recrutador e parceiro comercial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Diferenciais</div>
+          <h2>Mais do que layout bonito: projetos com presença de produto real</h2>
+          <p class="lead">
+            Meu trabalho busca unir design, clareza visual e proposta comercial para que o
+            resultado final transmita confiança e valor logo no primeiro contato.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="info-card fade-up">
+            <div class="info-icon">⚡</div>
+            <h3>Execução moderna</h3>
+            <p>Projetos com estilo atual, forte presença visual e sensação de produto maduro.</p>
+          </article>
+
+          <article class="info-card fade-up delay-1">
+            <div class="info-icon">🌐</div>
+            <h3>Publicação real</h3>
+            <p>Sites e apps online, funcionais e prontos para demonstração profissional.</p>
+          </article>
+
+          <article class="info-card fade-up delay-2">
+            <div class="info-icon">🧠</div>
+            <h3>Foco em valor</h3>
+            <p>Cada projeto é pensado para comunicar melhor a marca e aumentar percepção de qualidade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Projetos publicados</div>
+          <h2>Trabalhos em destaque</h2>
+          <p class="lead">
+            Estes projetos representam minha evolução em design, construção de produto,
+            apresentação comercial e criação de experiências digitais mais profissionais.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card fade-up">
+            <div class="project-number">01</div>
+            <div class="project-label">Web App publicado</div>
+            <h3>💸 Finanças</h3>
+            <p>
+              Aplicação web para controle financeiro pessoal com foco em organização,
+              clareza visual, autenticação e experiência prática para o dia a dia.
+            </p>
+
+            <div class="project-tags">
+              <span>Finanças</span>
+              <span>Web App</span>
+              <span>Dashboard</span>
+              <span>Auth</span>
+              <span>UX</span>
+            </div>
+
+            <p><strong>Objetivo:</strong> facilitar a visualização de entradas, saídas e controle financeiro.</p>
+            <p><strong>Destaque:</strong> estrutura de app real com área autenticada e boa organização visual.</p>
+
+            <div class="project-links">
+              <a class="primary-link" href="https://andradesfinanca.vercel.app/auth" target="_blank" rel="noopener noreferrer">
+                Ver projeto
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up delay-1">
+            <div class="project-number">02</div>
+            <div class="project-label">Web App publicado</div>
+            <h3>✅ Habit Flow</h3>
+            <p>
+              Aplicação para acompanhamento de hábitos com progresso visual,
+              dashboard interativo e experiência clara para criação de rotina e constância.
+            </p>
+
+            <div class="project-tags">
+              <span>Hábitos</span>
+              <span>Dashboard</span>
+              <span>Produtividade</span>
+              <span>Web App</span>
+              <span>UX</span>
+            </div>
+
+            <p><strong>Objetivo:</strong> ajudar usuários a manterem consistência em metas e hábitos.</p>
+            <p><strong>Destaque:</strong> sensação de produto útil, moderno e bem estruturado.</p>
+
+            <div class="project-links">
+              <a class="primary-link" href="https://habit-flow-progress.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Ver projeto
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card featured fade-up delay-2">
+            <div class="project-number">03</div>
+            <div class="project-label featured-label">Projeto com cliente real</div>
+            <h3>🏍️ Larry Detalhes</h3>
+            <p>
+              Landing page premium para estética automotiva, criada com foco em autoridade visual,
+              apresentação comercial forte e geração de contatos via WhatsApp.
+            </p>
+
+            <div class="project-tags">
+              <span>Cliente Real</span>
+              <span>Landing Page</span>
+              <span>Conversão</span>
+              <span>Marca</span>
+              <span>Premium</span>
+            </div>
+
+            <p><strong>Objetivo:</strong> fortalecer a imagem da empresa e aumentar a chance de agendamento.</p>
+            <p><strong>Destaque:</strong> projeto online já utilizado por cliente real, reforçando aplicação prática no mercado.</p>
+
+            <div class="project-status">
+              Status: projeto publicado e em uso por cliente.
+            </div>
+
+            <div class="project-links">
+              <a class="primary-link" href="https://larrydetalhes.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Ver projeto
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up delay-3">
+            <div class="project-number">04</div>
+            <div class="project-label">Landing page publicada</div>
+            <h3>💈 Barbearia</h3>
+            <p>
+              Site premium para barbearia com identidade visual elegante,
+              foco em apresentação de serviços, posicionamento e imagem profissional.
+            </p>
+
+            <div class="project-tags">
+              <span>Barbearia</span>
+              <span>Landing Page</span>
+              <span>Premium</span>
+              <span>UI</span>
+              <span>Conversão</span>
+            </div>
+
+            <p><strong>Objetivo:</strong> transmitir mais valor e gerar mais agendamentos.</p>
+            <p><strong>Destaque:</strong> design masculino, forte e comercialmente atrativo.</p>
+
+            <div class="project-links">
+              <a class="primary-link" href="https://andrade-style.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Ver projeto
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up">
+            <div class="project-number">05</div>
+            <div class="project-label">Site comercial publicado</div>
+            <h3>🏍️ Moto Peças Dois Irmãos</h3>
+            <p>
+              Site para oficina e loja de peças com foco em confiança,
+              clareza de serviços e geração de contatos para negócio local.
+            </p>
+
+            <div class="project-tags">
+              <span>Oficina</span>
+              <span>Negócio Local</span>
+              <span>WhatsApp</span>
+              <span>Conversão</span>
+              <span>Landing Page</span>
+            </div>
+
+            <p><strong>Objetivo:</strong> atrair clientes da região e reforçar credibilidade do negócio.</p>
+            <p><strong>Destaque:</strong> página estruturada para conversão simples e direta.</p>
+
+            <div class="project-links">
+              <a class="primary-link" href="https://motopecasdoisirmaos.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Ver projeto
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up delay-1">
+            <div class="project-number">06</div>
+            <div class="project-label">Site temático publicado</div>
+            <h3>🎶 Grupo Vim Te Ver</h3>
+            <p>
+              Página para grupo de pagode com foco em presença digital,
+              identidade visual forte e melhor apresentação do trabalho artístico.
+            </p>
+
+            <div class="project-tags">
+              <span>Música</span>
+              <span>Landing Page</span>
+              <span>Marca</span>
+              <span>Visual</span>
+              <span>Divulgação</span>
+            </div>
+
+            <p><strong>Objetivo:</strong> valorizar a imagem do grupo e facilitar sua divulgação online.</p>
+            <p><strong>Destaque:</strong> projeto com proposta visual mais temática e comunicativa.</p>
+
+            <div class="project-links">
+              <a class="primary-link" href="https://grupo-vim-te-ver.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Ver projeto
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card fade-up delay-2">
+            <div class="project-number">07</div>
+            <div class="project-label">Site comercial publicado</div>
+            <h3>🍔 Hamburgueria</h3>
+            <p>
+              Landing page moderna para hamburgueria com visual chamativo,
+              proposta comercial forte e foco em apresentação de marca e vendas.
+            </p>
+
+            <div class="project-tags">
+              <span>Food</span>
+              <span>Hamburgueria</span>
+              <span>Landing Page</span>
+              <span>Conversão</span>
+              <span>Marca</span>
+            </div>
+
+            <p><strong>Objetivo:</strong> gerar mais interesse, mais pedidos e reforçar o posicionamento visual do negócio.</p>
+            <p><strong>Destaque:</strong> projeto com apelo comercial forte e estética marcante.</p>
+
+            <div class="project-links">
+              <a class="primary-link" href="https://silvas-brasa-burger-tdlu.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Ver projeto
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tecnologias" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Tecnologias e foco</div>
+          <h2>Como penso e construo meus projetos</h2>
+          <p class="lead">
+            Meu trabalho combina design moderno, estrutura visual forte e construção prática
+            para criar páginas e aplicações com presença mais profissional.
+          </p>
+        </div>
+
+        <div class="tech-grid">
+          <article class="tech-card fade-up">
+            <div class="tech-icon">🎨</div>
+            <h3>UI moderna</h3>
+            <p>Interfaces com estética premium, dark mode e forte percepção de valor.</p>
+          </article>
+
+          <article class="tech-card fade-up delay-1">
+            <div class="tech-icon">📱</div>
+            <h3>Responsividade</h3>
+            <p>Projetos pensados para funcionar bem no celular e no desktop.</p>
+          </article>
+
+          <article class="tech-card fade-up delay-2">
+            <div class="tech-icon">⚙️</div>
+            <h3>Estrutura funcional</h3>
+            <p>Páginas e apps organizados para serem claros, úteis e apresentáveis.</p>
+          </article>
+
+          <article class="tech-card fade-up delay-3">
+            <div class="tech-icon">💬</div>
+            <h3>Conversão</h3>
+            <p>Elementos pensados para valorizar a marca e facilitar o contato comercial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Serviços</div>
+          <h2>O que posso desenvolver</h2>
+          <p class="lead">
+            Soluções digitais para negócios, marcas e produtos que precisam de presença,
+            clareza visual, identidade forte e mais conversão.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card fade-up">
+            <div class="service-icon">🌐</div>
+            <h3>Landing Pages</h3>
+            <p>Páginas profissionais para apresentar serviços, fortalecer marca e gerar contatos.</p>
+          </article>
+
+          <article class="service-card fade-up delay-1">
+            <div class="service-icon">📊</div>
+            <h3>Dashboards</h3>
+            <p>Interfaces organizadas para controle, visualização e gestão com aparência moderna.</p>
+          </article>
+
+          <article class="service-card fade-up delay-2">
+            <div class="service-icon">💻</div>
+            <h3>Web Apps</h3>
+            <p>Aplicações web funcionais com foco em experiência, utilidade e presença profissional.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="eyebrow">Contato</div>
+          <h2>Vamos construir algo forte juntos</h2>
+          <p class="lead">
+            Se você quer um projeto com visual moderno, presença profissional e mais valor
+            percebido, estes são meus principais canais de contato.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card fade-up">
+            <h3>📩 Contato direto</h3>
+            <p>
+              Se você procura alguém para criar páginas ou aplicações com forte impacto visual
+              e aparência profissional, vamos conversar.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-secondary" href="mailto:luigittcontato@gmail.com">
+                E-mail
+              </a>
+              <a
+                class="btn btn-whatsapp"
+                href="https://wa.me/5521983439717"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="contact-card fade-up delay-1">
+            <h3>🚀 Disponível para projetos</h3>
+            <p>
+              Landing pages, dashboards e web apps com foco em design premium,
+              experiência clara e apresentação comercial mais forte.
+            </p>
+
+            <div class="contact-actions">
+              <a
+                class="btn btn-secondary"
+                href="https://github.com/luigittcontato-bit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              <a class="btn btn-secondary" href="#projetos">
+                Ver projetos
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <p><strong>E-mail:</strong> luigittcontato@gmail.com</p>
+        <p><strong>WhatsApp:</strong> (21) 98343-9717</p>
+        <p><strong>Projetos ativos:</strong> Moto Peças Dois Irmãos • Barbearia • Habit Flow • Finanças • Grupo Vim Te Ver • Larry Detalhes • Hamburgueria</p>
+        <p class="footer-mini">
+          © 2026 Luigi Andrade. Portfólio com foco em design premium, produto digital e apresentação profissional.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/5521983439717"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+    title="Falar no WhatsApp"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.44c-.29-.14-1.69-.83-1.95-.92-.26-.1-.45-.14-.64.14-.19.29-.74.92-.9 1.11-.17.19-.33.22-.62.07-.29-.14-1.2-.44-2.29-1.39-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.12-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-.99 2.45.02 1.45 1.05 2.85 1.2 3.05.14.19 2.04 3.12 4.94 4.37.69.29 1.23.47 1.65.6.69.22 1.31.19 1.81.11.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"></path>
+      <path d="M16.03 3.2c-7.08 0-12.82 5.73-12.82 12.8 0 2.25.59 4.45 1.7 6.38L3 29l6.78-1.78a12.8 12.8 0 0 0 6.25 1.6h.01c7.07 0 12.8-5.74 12.8-12.81 0-3.42-1.33-6.64-3.76-9.06A12.75 12.75 0 0 0 16.03 3.2zm0 23.48h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1-1.63-5.66c0-5.88 4.77-10.65 10.64-10.65 2.84 0 5.5 1.11 7.5 3.11a10.55 10.55 0 0 1 3.11 7.52c0 5.88-4.78 10.66-10.62 10.66z"></path>
+    </svg>
+  </a>
+</body>
+</html>
